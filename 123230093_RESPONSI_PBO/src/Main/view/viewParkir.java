@@ -21,22 +21,38 @@ public class viewParkir extends JFrame{
     private controllerParkir controller;
     private JTable table;
     private DefaultTableModel tableModel;
+    private JTextField fieldNama;
+    private JTextField fieldPlat;
+    private JTextField fieldMerk;
+    private JTextField fieldDurasi;
     
-    public void setController(controllerParkir controller){
-        this.controller = controller;
-    }
-    public void showDataParkir(ArrayList<modelParkir.dataParkir> dataparkir){
-        tableModel.setRowCount(0);
-        for (modelParkir.dataParkir d : dataparkir){
-            tableModel.addRow(new Object[]{
-                d.id,
-                d.nama,
-                d.plat,
-                d.merk,
-                d.durasi,
-                d.getTotalBayar()
-            });
+    private JButton addButton, deleButton, updaButton, editButton, cleaButton;
+    private int currentEditingid = -1;
+    
+    public viewDataparkir(){
+        setTitle("Aplikasi Manajemen Data Parkir");
+        
+    
+    
+    
+        public void setController(controllerParkir controller){
+            this.controller = controller;
         }
-    }
-    
+        public void showDataParkir(ArrayList<modelParkir.dataParkir> dataparkirs){
+            tableModel.setRowCount(0);
+            for (modelParkir.dataParkir d : dataparkirs){
+                tableModel.addRow(new Object[]{
+                    d.id,
+                    d.nama,
+                    d.plat,
+                    d.merk,
+                    d.durasi,
+                    d.getTotalBayar()
+                });
+            }
+        }
+        public void showMessage(String message){
+            JOptionPane.showMessageDialog(this, message);
+        }
+    } 
 }
