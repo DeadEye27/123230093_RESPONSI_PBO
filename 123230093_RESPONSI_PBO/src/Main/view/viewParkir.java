@@ -31,6 +31,20 @@ public class viewParkir extends JFrame{
     
     public viewDataparkir(){
         setTitle("Aplikasi Manajemen Data Parkir");
+        setSize(800, 700);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
+        JPanel 
+        
+        
+        
+        
+        tableModel = new DefaultTableModel(new Object[]{
+           "ID", "Nama", "Plat", "Merk", "Durasi", "Total Bayar" 
+        }, 0);
+        
+        table = new JTable(tableModel);
         
     
     
